@@ -7,8 +7,11 @@ public class Persona {
 	private int age;
 	private String gender;
 	
-	public Persona(int size, String name2, int edad, String gender2) {
-		
+	public Persona(int id, String name, int edad, String gender) {
+		this.id = id;
+		this.name = name;
+		this.age = edad;
+		this.gender = gender;
 	}
 
 	public int getAge() {
