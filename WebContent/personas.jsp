@@ -10,6 +10,8 @@
 <body>
 
 <s:form action="save">
+
+		<s:hidden name="id"></s:hidden>
         <s:textfield label="Nombre" name="name"></s:textfield>
         <s:textfield label="Edad" name="age"></s:textfield>
         <s:radio label="Genero" name="gender" list="#{'Femenino':'Femenino','Masculino':'Masculino'}" />
@@ -17,12 +19,14 @@
         <s:actionerror/>
 	</s:form>
 	
-	<table>
+	<table border="1">
         <tr>
             <th>ID</th>
             <th>NOMBRE</th>
             <th>EDAD</th>
             <th>GENERO</th>
+            <th></th>
+            <th></th>
         </tr>
     <s:iterator value="personas" var="p">
         <tr>
@@ -32,7 +36,7 @@
             <td><s:property value="#p.gender"/></td>
         	<td><s:url id="deleteURL" action="delete">
         	    <s:param name="id" value="#p.id"/>
-        	    </s:url>s:url>
+        	    </s:url>
         	    <s:a href="%{deleteURL}">Borrar></s:a>
         	</td>
         	<td>

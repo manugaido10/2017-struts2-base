@@ -3,6 +3,7 @@ import utn.frd.bean.Persona;
 import utn.frd.db.PersistentManager;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -68,10 +69,25 @@ public String execute(){
             return ERROR;
         }
     
-        	p = new Persona(personas.size(), name, edad, gender);
+        if( id==0 ){ //el id es nulo
+        	p = new Persona(personas.size()+1, name, edad, gender);
         	PersistentManager.getInstance().add(p);
-        	return SUCCESS;
-		}
+
+        }else{
+        	
+        	p = personas.stream().filter(p->p.getId()==id).findFirst().get();
+        	p.setName(name);
+        	p.setAge(edad);
+        	p.setGender(gender);
+        
+        }
+        //limpio el formulario
+        name = "";
+        age = "";
+        gender = "";
+
+        return SUCCESS;
+	}
 
 	public String delete(){
 		personas = PersistentManager.getInstance();
@@ -81,22 +97,13 @@ public String execute(){
 
 	public String modify(){
 		personas = PersistentManager.getInstance();
-		Persona persona = busqueda(id,personas);
+		Persona persona = personas.stream().filter(p->p.getId()==id).findFirst().get();
 		id = persona.getId();
 		name = persona.getName();
-		age = String.valueOf(persona.getAge());
-		gender = persona.getGender();
+
 		return SUCCESS;
-	}
+}
 	
-	private Persona busqueda(long id, List<Persona> personas){
-		try{
-			return personas.stream().filter(p->p.getId()==id).findFirst().get();
-		} catch(Exception e){
-			addActionError("No se encontro la persona");
-			throw e;
-		}
-	}
 	
 	public long getId(){
 		return id;
