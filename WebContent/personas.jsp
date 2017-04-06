@@ -43,7 +43,7 @@
         		<s:url id="modifyURL" action="modify">
         		<s:param name="id" value="#p.id"/>
         		</s:url>
-        		<s:a href="%{modifyURL}">Modificar</s:a>
+        		<s:a href="%{modifyURL}">Modificar></s:a>
         	</td>    
         </tr>
 	</s:iterator>

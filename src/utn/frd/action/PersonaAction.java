@@ -100,7 +100,8 @@ public String execute(){
 		Persona persona = personas.stream().filter(p->p.getId()==id).findFirst().get();
 		id = persona.getId();
 		name = persona.getName();
-
+		gender = persona.getGender();
+		age = String.valueOf(persona.getAge());
 		return SUCCESS;
 }
 	
