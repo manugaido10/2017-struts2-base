@@ -15,8 +15,8 @@
 	<h1>Welcome To Struts 2!</h1>
 	<p>
 		<!-- este es un link al action "hello" que está definido en el struts.xml -->
-		<a href="<s:url action='hello'/>">Ejecutar el action (utn.frd.action.HelloWorldAction -> metodo execute)</a>
-		Esta regla está definida en el archivo struts.xml
-	</p>
+		<a href="<s:url action='personas'/>">Haga click aquí</a>
+		Según los datos que obtengamos sobre usted, estará habilitado para administrar la lista de usuarios.
+	</p> <!--  Se supone que el sistema se encarga de chequear si el usuario puede manejar la base de datos de usuarios -->
 </body>
 </html>

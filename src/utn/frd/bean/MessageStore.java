@@ -7,7 +7,8 @@ public class MessageStore {
 
 	public MessageStore() {
 
-		setMessage("Hello User, this is a message from MessageStore object.");
+		setMessage("Hola usuario, tiene la posibilidad de administrar la lista de personas haciendo click en el siguiente link:");
+		
 	}
 
 	public String getMessage() {

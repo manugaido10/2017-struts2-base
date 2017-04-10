@@ -6,14 +6,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Hello World!</title>
-</head>
+</head>	
 
 <body>
-	<h1>El resultado es...</h1>
+	<h1>El resultado es correcto, fue habilitado por el sistema!</h1>
 	<hr>
 	<h2>
 	<!-- el tag de abajo muestra el campo "message" del objeto "messageStore" que está declarado como campo del action -->
-		<s:property value="messageStore.message" />
+		<s:property value="messageStore.message" /> 
 	</h2>
 </body>
 </html>
